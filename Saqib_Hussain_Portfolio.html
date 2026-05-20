@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saqib Hussain — Digital Marketing Specialist & Sr. Multimedia Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700;800&family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,600;0,700;1,100&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --bg: #0B0B0F;
+      --bg-2: #13131A;
+      --bg-3: #1A1A24;
+      --line: #262633;
+      --text: #EDEDF2;
+      --text-2: #9A9AA8;
+      --text-3: #6B6B7A;
+      --gold: #C9A961;
+      --gold-2: #E8D08F;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ============ NAV ============ */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(11, 11, 15, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .logo span {
+      color: var(--gold);
+      font-style: italic
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none
+    }
+
+    .nav-links a {
+      color: var(--text-2);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold)
+    }
+
+    .nav-cta {
+      padding: 10px 22px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold);
+      color: var(--bg)
+    }
+
+    @media(max-width:900px) {
+      .nav-links {
+        display: none
+      }
+    }
+
+    /* ============ HERO - FULLSCREEN HEADER ============ */
+    .site-header {
+      min-height: 100vh;
+      background-image: url('Banner.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    .site-header .container {
+      position: relative;
+      z-index: 2;
+      padding: 0 24px;
+    }
+
+    .site-header .caption h2 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: clamp(16px, 2.5vw, 26px);
+      font-weight: 200;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+      margin-bottom: 12px;
+    }
+
+    .site-header .caption h1 {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: clamp(44px, 8vw, 90px);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.1;
+      margin: 10px 0 0;
+    }
+
+    .site-header .caption h1 .blc {
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 200;
+      display: inline;
+    }
+
+    /* ============ CD-HEADLINE CLIP ANIMATION (matches reference site) ============ */
+    .cd-headline {
+      display: block;
+    }
+
+    .cd-words-wrapper {
+      display: inline-block;
+      position: relative;
+      text-align: left;
+      vertical-align: top;
+      overflow: hidden;
+    }
+
+    /* blinking cursor */
+    .cd-words-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: 0;
+      width: 3px;
+      height: 80%;
+      background: var(--gold);
+      animation: blink 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1 }
+      50%       { opacity: 0 }
+    }
+
+    .cd-words-wrapper b {
+      display: inline-block;
+      position: absolute;
+      white-space: nowrap;
+      left: 0;
+      top: 0;
+      font-weight: 900;
+      color: var(--gold);
+      opacity: 0;
+    }
+
+    .cd-words-wrapper b.is-visible {
+      position: relative;
+      opacity: 1;
+    }
+
+    .site-header .arrow {
+      position: absolute;
+      bottom: 5vh;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      font-size: 13px;
+      z-index: 8;
+      left: 0;
+    }
+
+    .site-header .arrow a {
+      color: #fff;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .site-header .arrow i {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      animation: bounce 2s infinite;
+    }
+
+    .site-header .arrow i::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+
+    .site-header .arrow i:hover::after {
+      transform: scale(1.3);
+      opacity: 0;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(8px)
+      }
+    }
+
+    /* ============ HERO - INTRO SECTION ============ */
+    .hero {
+      padding: 100px 0;
+      scroll-margin-top: 80px;
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 30%;
+      right: -200px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(201, 169, 97, 0.07) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(60px);
+      z-index: 0;
+    }
+
+    .hero .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 5%;
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-img-wrap {
+      position: relative;
+      transition: all 0.4s;
+      padding: 0 20px 0 0;
+    }
+
+    .hero-img-wrap:hover {
+      padding: 0 0 0 20px;
+    }
+
+    .hero-img-wrap::after {
+      content: '';
+      background: var(--line);
+      position: absolute;
+      left: 15px;
+      right: 5px;
+      top: 15px;
+      bottom: -15px;
+      z-index: -1;
+      transition: all 0.5s;
+    }
+
+    .hero-img-wrap:hover::after {
+      background: var(--gold);
+      left: 5px;
+      top: -15px;
+      right: 15px;
+      bottom: 15px;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(0.92) contrast(1.05);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2
+    }
+
+    .hero-subtitle {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: clamp(16px, 2.2vw, 22px);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+
+    .hero-subtitle::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .hero-content p {
+      color: var(--text-2);
+      font-size: 15px;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .hero-content p span {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* Social icons */
+    .hero-social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0 32px;
+    }
+
+    .hero-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--line);
+      color: var(--text-2);
+      font-size: 13px;
+      text-decoration: none;
+      transition: all 0.4s;
+      border-radius: 2px;
+    }
+
+    .hero-social a:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    /* 3D flip buttons */
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .flip-btn {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      perspective: 600px;
+    }
+
+    .flip-btn a {
+      display: inline-block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      height: 44px;
+      line-height: 44px;
+      width: 148px;
+      transform-style: preserve-3d;
+      position: relative;
+      transition: 0.35s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .flip-btn a .btn-front,
+    .flip-btn a .btn-back {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.35s;
+    }
+
+    .flip-btn a .btn-front {
+      background: var(--gold);
+      color: #fff;
+      transform-origin: top;
+      transform: translateY(0) rotateX(0deg);
+    }
+
+    .flip-btn a .btn-back {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      font-size: 18px;
+      transform-origin: bottom;
+      transform: translateY(-100%) rotateX(90deg);
+    }
+
+    .flip-btn a:hover .btn-front {
+      transform: translateY(100%) rotateX(90deg);
+    }
+
+    .flip-btn a:hover .btn-back {
+      transform: translateY(0) rotateX(0deg);
+    }
+
+    .flip-btn-ghost a .btn-front {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+
+    .flip-btn-ghost a .btn-back {
+      background: var(--gold);
+      color: #fff;
+      border: none;
+    }
+
+    @media(max-width:900px) {
+      .hero .container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hero-img-wrap {
+        max-width: 380px;
+        margin: 0 auto;
+      }
+    }
+
+    /* ============ STATS STRIP ============ */
+    .stats {
+      background: var(--bg-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 60px 5%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .stat {
+      text-align: center;
+      position: relative
+    }
+
+    .stat:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: -20px;
+      top: 20%;
+      bottom: 20%;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 500;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+      font-style: italic;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-num sup {
+      font-size: 0.5em;
+      vertical-align: 0.6em;
+      font-style: normal;
+      font-weight: 400
+    }
+
+    .stat-label {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      font-weight: 500;
+    }
+
+    @media(max-width:768px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 48px
+      }
+
+      .stat:nth-child(2)::after {
+        display: none
+      }
+    }
+
+    /* ============ SECTION COMMON ============ */
+    .section {
+      padding: 120px 5%;
+      position: relative
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 80px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .section-tag::before,
+    .section-tag::after {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 500
+    }
+
+    .section-sub {
+      color: var(--text-2);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto
+    }
+
+    /* ============ ABOUT ============ */
+    .about {
+      background: var(--bg)
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1300px;
+      margin: 0 auto
+    }
+
+    .about-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .about-text h3 em {
+      font-style: italic;
+      color: var(--gold)
+    }
+
+    .about-text p {
+      color: var(--text-2);
+      margin-bottom: 18px;
+      font-size: 15px;
+      line-height: 1.8
+    }
+
+    .about-text p strong {
+      color: var(--text);
+      font-weight: 500
+    }
+
+    .about-signature {
+      margin-top: 32px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 28px;
+      color: var(--gold);
+    }
+
+    .about-pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px
+    }
+
+    .pillar {
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      padding: 32px 28px;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .pillar:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px)
+    }
+
+    .pillar-num {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 36px;
+      color: var(--gold);
+      margin-bottom: 14px;
+      line-height: 1;
+    }
+
+    .pillar h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      letter-spacing: -0.005em;
+    }
+
+    .pillar p {
+      color: var(--text-2);
+      font-size: 13px;
+      line-height: 1.65
+    }
+
+    @media(max-width:900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px
+      }
+    }
+
+    /* ============ SERVICES ============ */
+    .services {
+      background: var(--bg-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      max-width: 1300px;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+    }
+
+    .service {
+      background: var(--bg-2);
+      padding: 48px 36px;
+      transition: all 0.4s;
+      position: relative;
+      cursor: default;
+    }
+
+    .service:hover {
+      background: var(--bg-3)
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      transition: all 0.4s;
+    }
+
+    .service:hover .service-icon {
+      background: var(--gold);
+      color: var(--bg)
+    }
+
+    .service-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke-width: 1.3
+    }
+
+    .service h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .service p {
+      color: var(--text-2);
+      font-size: 14px;
+      line-height: 1.7
+    }
+
+    .service-num {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 14px;
+      color: var(--gold);
+      opacity: 0.5;
+      letter-spacing: 0.1em;
+    }
+
+    @media(max-width:900px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(max-width:600px) {
+      .services-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    /* ============ EXPERIENCE TIMELINE ============ */
+    .experience {
+      background: var(--bg)
+    }
+
+    .timeline {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 170px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--line);
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      padding: 36px 0;
+      position: relative;
+      gap: 60px;
+    }
+
+    .tl-item:not(:last-child) {
+      border-bottom: 1px solid var(--line)
+    }
+
+    .tl-year {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      position: relative;
+      padding-right: 32px;
+      text-align: right;
+    }
+
+    .tl-year::after {
+      content: "";
+      position: absolute;
+      right: -7px;
+      top: 8px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--gold);
+      z-index: 2;
+    }
+
+    .tl-current::after {
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.2);
+    }
+
+    .tl-content {
+      padding-left: 0
+    }
+
+    .tl-role {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 6px;
+    }
+
+    .tl-company {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .tl-company-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0.02em
+    }
+
+    .tl-meta {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      padding: 3px 10px;
+      border: 1px solid var(--line);
+    }
+
+    .tl-list {
+      list-style: none;
+      margin-top: 14px
+    }
+
+    .tl-list li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-2);
+    }
+
+    .tl-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 10px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .tl-list li b {
+      color: var(--text);
+      font-weight: 500
+    }
+
+    .tl-kpis {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px
+    }
+
+    .kpi {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 4px 10px;
+      border: 1px solid var(--gold);
+      font-weight: 500;
+    }
+
+    @media(max-width:768px) {
+      .timeline::before {
+        left: 8px
+      }
+
+      .tl-item {
+        grid-template-columns: 1fr;
+        gap: 16px
+      }
+
+      .tl-year {
+        text-align: left;
+        padding-left: 32px;
+        padding-right: 0
+      }
+
+      .tl-year::after {
+        right: auto;
+        left: 1px
+      }
+    }
+
+    /* ============ SKILLS ============ */
+    .skills {
+      background: var(--bg-2);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .skill-col h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 32px;
+      letter-spacing: -0.01em;
+    }
+
+    .skill-col h3 em {
+      font-style: italic;
+      color: var(--gold)
+    }
+
+    .skill-row {
+      margin-bottom: 24px
+    }
+
+    .skill-row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+
+    .skill-name {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em
+    }
+
+    .skill-pct {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 16px;
+      color: var(--gold);
+    }
+
+    .skill-bar {
+      height: 2px;
+      background: var(--line);
+      position: relative;
+      overflow: hidden
+    }
+
+    .skill-fill {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-2) 100%);
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .tool-card {
+      aspect-ratio: 1;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+
+    .tool-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px)
+    }
+
+    .tool-card-icon {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .tool-card-name {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      font-weight: 500;
+    }
+
+    .tc-ps .tool-card-icon {
+      color: #31A8FF
+    }
+
+    .tc-ai .tool-card-icon {
+      color: #FF9A00
+    }
+
+    .tc-pr .tool-card-icon {
+      color: #9999FF
+    }
+
+    .tc-ae .tool-card-icon {
+      color: #D291FF
+    }
+
+    .tc-fi .tool-card-icon {
+      color: #FF61F6
+    }
+
+    .tc-mj .tool-card-icon {
+      color: #fff
+    }
+
+    .tc-rw .tool-card-icon {
+      color: #00FFA3
+    }
+
+    .tc-veo .tool-card-icon {
+      color: #4285F4
+    }
+
+    @media(max-width:900px) {
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 60px
+      }
+    }
+
+    /* ============ CONTACT ============ */
+    .contact {
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: "";
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201, 169, 97, 0.06) 0%, transparent 70%);
+      filter: blur(60px);
+    }
+
+    .contact-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .contact h2 em {
+      font-style: italic;
+      color: var(--gold)
+    }
+
+    .contact-lead {
+      font-size: 17px;
+      color: var(--text-2);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      line-height: 1.7
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .contact-card {
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      padding: 32px 24px;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .contact-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px)
+    }
+
+    .contact-card-label {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .contact-card-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    @media(max-width:768px) {
+      .contact-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 8px
+    }
+
+    .social-link {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      color: var(--text-2);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .social-link:hover {
+      border-color: var(--gold);
+      color: var(--gold)
+    }
+
+    .social-link svg {
+      width: 18px;
+      height: 18px
+    }
+
+    /* ============ FOOTER ============ */
+    .footer {
+      background: var(--bg-2);
+      border-top: 1px solid var(--line);
+      padding: 32px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--text-3);
+      letter-spacing: 0.05em;
+    }
+
+    .footer .logo-sm {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .footer .logo-sm span {
+      color: var(--gold);
+      font-style: italic
+    }
+
+    /* ============ ANIMATIONS ============ */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .hero-content>* {
+      animation: fadeUp 0.9s ease-out backwards
+    }
+
+    .hero-content>*:nth-child(1) {
+      animation-delay: 0.1s
+    }
+
+    .hero-content>*:nth-child(2) {
+      animation-delay: 0.25s
+    }
+
+    .hero-content>*:nth-child(3) {
+      animation-delay: 0.4s
+    }
+
+    .hero-content>*:nth-child(4) {
+      animation-delay: 0.55s
+    }
+
+    .hero-img-wrap {
+      animation: fadeUp 1s 0.3s ease-out backwards
+    }
+
+    .skill-fill {
+      animation: fillBar 1.5s ease-out forwards;
+      transform-origin: left
+    }
+
+    @keyframes fillBar {
+      from {
+        transform: scaleX(0)
+      }
+
+      to {
+        transform: scaleX(1)
+      }
+    }
+
+    /* ============ PORTFOLIO ============ */
+    .portfolio {
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 80px;
+    }
+
+    .portfolio-filters-wrapper {
+      margin-bottom: 50px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .portfolio-filters {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+      padding: 10px 5%;
+      width: 100%;
+      box-sizing: border-box;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .portfolio-filters::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+
+    @media (min-width: 1025px) {
+      .portfolio-filters {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0;
+      }
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--text-2);
+      padding: 10px 22px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .filter-btn:hover, .filter-btn:focus {
+      color: var(--gold);
+      border-color: var(--gold);
+      outline: none;
+    }
+
+    .filter-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--bg);
+      font-weight: 600;
+    }
+
+    .portfolio-grid {
+      display: block;
+      column-count: 3;
+      column-gap: 30px;
+      max-width: 1300px;
+      margin: 0 auto;
+      transition: min-height 0.4s ease;
+    }
+
+    @media (max-width: 1024px) {
+      .portfolio-grid {
+        column-count: 2;
+        column-gap: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .portfolio-grid {
+        column-count: 1;
+      }
+    }
+
+    .portfolio-item {
+      position: relative;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      break-inside: avoid;
+      margin-bottom: 30px;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    @media (max-width: 1024px) {
+      .portfolio-item {
+        margin-bottom: 20px;
+      }
+    }
+
+    .portfolio-item.portfolio-item-fade {
+      opacity: 0;
+      transform: scale(0.92);
+    }
+
+    .portfolio-item.portfolio-item-hidden {
+      display: none;
+    }
+
+    .portfolio-img-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 11, 15, 0.9);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      padding: 24px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-item-category {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      transform: translateY(15px);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .portfolio-item-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 20px;
+      transform: translateY(15px);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
+    }
+
+    .portfolio-item:hover .portfolio-item-category,
+    .portfolio-item:hover .portfolio-item-title {
+      transform: translateY(0);
+    }
+
+    .portfolio-view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--bg);
+      background: var(--gold);
+      padding: 10px 22px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      transform: translateY(15px);
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s, opacity 0.4s ease 0.1s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .portfolio-item:hover .portfolio-view-btn {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .portfolio-view-btn:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .portfolio-item-video-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      width: 36px;
+      height: 36px;
+      background: rgba(201, 169, 97, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg);
+      font-size: 14px;
+      z-index: 3;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .portfolio-item:hover .portfolio-item-video-icon {
+      transform: scale(1.1);
+      background: #fff;
+      color: var(--gold);
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 11, 15, 0.98);
+      backdrop-filter: blur(15px);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox-modal.active .lightbox-content {
+      transform: scale(1);
+    }
+
+    .lightbox-media-container {
+      position: relative;
+      max-width: 100%;
+      max-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-media {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      border-radius: 4px;
+      background: #000;
+    }
+
+    .lightbox-caption {
+      margin-top: 20px;
+      color: var(--text);
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .lightbox-category {
+      color: var(--gold);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-family: 'Josefin Sans', sans-serif;
+      margin-top: 6px;
+      text-align: center;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -45px;
+      right: -10px;
+      background: transparent;
+      border: none;
+      color: var(--text-2);
+      font-size: 28px;
+      cursor: pointer;
+      transition: color 0.3s;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-close:hover {
+      color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .lightbox-close {
+        top: 10px;
+        right: 10px;
+        background: rgba(11, 11, 15, 0.8);
+        border-radius: 50%;
+        border: 1px solid var(--line);
+      }
+      .lightbox-content {
+        max-width: 95%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="logo">Saqib<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+  </nav>
+
+  <!-- HERO - FULLSCREEN HEADER -->
+  <header class="site-header" id="home">
+    <div class="container">
+      <div class="caption">
+        <h2>Hello, I'm Saqib Hussain</h2>
+        <h1 class="cd-headline clip">
+          <span class="blc">I Am </span>
+          <span class="cd-words-wrapper">
+            <b class="is-visible">Saqib Hussain</b>
+            <b>Digital Marketer</b>
+            <b>Multimedia Designer</b>
+            <b>Content Creator</b>
+          </span>
+        </h1>
+      </div>
+    </div>
+    <div class="arrow">
+      <a href="#hero-intro" data-scroll-to="hero-intro">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO - INTRO SECTION 
+  <section class="hero" id="hero-intro">
+    <div class="container">
+      <div class="hero-img-wrap">
+        <img src="https://hcoder.smartinnovates.net/i/personala/img/hero.jpg"
+          alt="Saqib Hussain — Digital Marketing Specialist">
+      </div>
+      <div class="hero-content">
+        <div class="hero-subtitle">Digital Marketing Specialist &amp; Sr. Multimedia Designer</div>
+        <p>I am <span>Saqib Hussain</span> — a versatile creative based in Dubai, UAE with <span>over 10 years</span> of
+          experience bridging strategic ad campaigns and engaging multimedia design.</p>
+        <p>I plan, launch and optimize high-performance campaigns across Meta, Google &amp; YouTube Ads — and craft the
+          cinematic content that makes them convert. From property walkthroughs to drone reels, I own the full creative
+          pipeline.</p>
+        <p>An early adopter of AI-native workflows — actively using <span>Adobe Firefly, MidJourney, Runway ML and VEO
+            3</span> to push creative output further, faster.</p>
+
+        <div class="hero-social">
+          <a href="https://www.linkedin.com/in/saqibhussain229" aria-label="LinkedIn"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:saqibhusain229@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/971506209290" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.sakibhussain.com" aria-label="Website"><i class="fas fa-globe"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <div class="hero-btns">
+          <span class="flip-btn">
+            <a href="#contact">
+              <span class="btn-front">Hire Me</span>
+              <span class="btn-back"><i class="fas fa-paper-plane"></i></span>
+            </a>
+          </span>
+          <span class="flip-btn flip-btn-ghost">
+            <a href="Saqib_Hussain_CV.pdf" download>
+              <span class="btn-front">Download CV</span>
+              <span class="btn-back"><i class="fas fa-download"></i></span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat">
+      <div class="stat-num">10<sup>+</sup></div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">6<sup>+</sup></div>
+      <div class="stat-label">Companies Served</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">+30<sup>%</sup></div>
+      <div class="stat-label">Traffic Growth</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">+45<sup>%</sup></div>
+      <div class="stat-label">Engagement Lift</div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section-head">
+      <div class="section-tag">About Me</div>
+      <h2 class="section-title">A creative built for <em>performance</em></h2>
+      <p class="section-sub">Where strategic media buying meets cinematic storytelling — that's the space I work in.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Crafting campaigns that <em>convert</em>, and content that <em>captures</em>.</h3>
+        <p>
+          I'm a Digital Marketing Specialist and Senior Multimedia Designer based in Dubai, with a decade of hands-on
+          experience across <strong>real estate, tourism, automotive, and manufacturing</strong>. My work sits at the
+          intersection of paid media performance and creative production.
+        </p>
+        <p>
+          I plan and optimize high-budget lead generation campaigns on Meta &amp; Google Ads, and I personally script,
+          shoot, and edit the assets that run inside them. From cinematic property walkthroughs to drone reels and
+          motion graphics, I own the full pipeline.
+        </p>
+        <p>
+          I'm an early adopter of AI-native workflows — actively using <strong>Adobe Firefly, MidJourney, Runway ML and
+            VEO 3</strong> to push creative output further, faster.
+        </p>
+        <div class="about-signature">— Saqib H.</div>
+      </div>
+
+      <div class="about-pillars">
+        <div class="pillar">
+          <div class="pillar-num">01</div>
+          <h4>Paid Ad Campaigns</h4>
+          <p>Plan, launch and optimize campaigns to drive lead generation and maximize ROI.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">02</div>
+          <h4>Performance Analysis</h4>
+          <p>Analyze data to improve key metrics: CPL, CPC, CTR, ROAS and conversions.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">03</div>
+          <h4>Multimedia Content</h4>
+          <p>Graphic design, video editing, videography, photography and 3D animation.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">04</div>
+          <h4>AI Integration</h4>
+          <p>Leveraging Firefly, MidJourney, Runway ML and VEO 3 to innovate workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="section-head">
+      <div class="section-tag">What I Do</div>
+      <h2 class="section-title">Services &amp; <em>Expertise</em></h2>
+      <p class="section-sub">A full-stack offering — from media strategy and ad operations to original creative
+        production.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service">
+        <div class="service-num">01</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10" />
+            <path
+              d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+        </div>
+        <h3>Meta &amp; Google Ads</h3>
+        <p>Full-funnel paid media — strategy, creative, audience targeting, retargeting and ROAS optimization.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">02</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polygon points="23 7 16 12 23 17 23 7" />
+            <rect x="1" y="5" width="15" height="14" rx="2" />
+          </svg>
+        </div>
+        <h3>Video Production</h3>
+        <p>Script, shoot and edit cinematic ads, property walkthroughs, brand films and social-first reels.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">03</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 19l7-7 3 3-7 7-3-3z" />
+            <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+            <path d="M2 2l7.586 7.586" />
+            <circle cx="11" cy="11" r="2" />
+          </svg>
+        </div>
+        <h3>Creative Direction</h3>
+        <p>Brand-consistent design systems across digital, social, print and out-of-home campaigns.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">04</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21 15 16 10 5 21" />
+          </svg>
+        </div>
+        <h3>Graphic Design</h3>
+        <p>Visual identity, ad creative, social templates, presentations and marketing collateral.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">05</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+            <line x1="12" y1="22.08" x2="12" y2="12" />
+          </svg>
+        </div>
+        <h3>3D &amp; CGI</h3>
+        <p>Photorealistic product visualization, 3D renders and motion-graphics-driven product films.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">06</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="13" r="4" />
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+          </svg>
+        </div>
+        <h3>Cinematic Shooting</h3>
+        <p>On-location videography and stills — Sony α7 III, drone work, lighting and direction.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">07</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <polyline points="2 17 12 22 22 17" />
+            <polyline points="2 12 12 17 22 12" />
+          </svg>
+        </div>
+        <h3>AI-Native Workflows</h3>
+        <p>Firefly, MidJourney, Runway ML and VEO 3 — accelerating creative output without losing soul.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">08</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="18" y1="20" x2="18" y2="10" />
+            <line x1="12" y1="20" x2="12" y2="4" />
+            <line x1="6" y1="20" x2="6" y2="14" />
+          </svg>
+        </div>
+        <h3>Performance Analysis</h3>
+        <p>Tracking CPL, CTR, CPC, ROAS — turning campaign data into the next round of better creative.</p>
+      </div>
+
+      <div class="service">
+        <div class="service-num">09</div>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+        </div>
+        <h3>Social Media Management</h3>
+        <p>Content strategy, scheduling, community engagement and data-driven content planning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section portfolio" id="portfolio">
+    <div class="section-head">
+      <div class="section-tag">My Work</div>
+      <h2 class="section-title">Creative <em>Portfolio</em></h2>
+      <p class="section-sub">Explore a curated selection of marketing campaigns, design collateral, videos, and digital experiences.</p>
+    </div>
+
+    <div class="portfolio-filters-wrapper">
+      <div class="portfolio-filters" role="tablist" aria-label="Portfolio categories">
+        <button class="filter-btn active" role="tab" aria-selected="true" aria-controls="portfolio-grid" data-filter="all" tabindex="0">All</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="banner-design" tabindex="-1">Banner Design</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="brand-guidelines" tabindex="-1">Brand Guidelines</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="brochure-design" tabindex="-1">Brochure Design</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="graphic-design" tabindex="-1">Graphic Design</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="photography" tabindex="-1">Photography</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="poster-design" tabindex="-1">Poster Design</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="print-media" tabindex="-1">Print Media</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="social-media" tabindex="-1">Social Media</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="ui-ux" tabindex="-1">UI/UX</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="video-editing" tabindex="-1">Video Editing</button>
+        <button class="filter-btn" role="tab" aria-selected="false" aria-controls="portfolio-grid" data-filter="website-design" tabindex="-1">Website Design</button>
+      </div>
+    </div>
+
+    <div class="portfolio-grid" id="portfolio-grid" role="region" aria-live="polite">
+      <!-- 1. Banner Design -->
+      <article class="portfolio-item" data-category="banner-design">
+        <div class="portfolio-img-container">
+          <img src="Banner%20Design/Branding%20-J_24X30.jpg" alt="Luxury Brand Banner J24" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Banner Design</span>
+            <h3 class="portfolio-item-title">Luxury Brand Banner J24</h3>
+            <button class="portfolio-view-btn" aria-label="View Luxury Brand Banner J24 project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="banner-design">
+        <div class="portfolio-img-container">
+          <img src="Banner%20Design/Branding%20-J_24X36.jpg" alt="Creative Rollup Banner" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Banner Design</span>
+            <h3 class="portfolio-item-title">Creative Rollup Banner</h3>
+            <button class="portfolio-view-btn" aria-label="View Creative Rollup Banner project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="banner-design">
+        <div class="portfolio-img-container">
+          <img src="Banner%20Design/Branding%20-K1_24X36.jpg" alt="Premium Outdoor Banner K1" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Banner Design</span>
+            <h3 class="portfolio-item-title">Premium Outdoor Banner K1</h3>
+            <button class="portfolio-view-btn" aria-label="View Premium Outdoor Banner K1 project">View Project</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Brand Guidelines -->
+      <article class="portfolio-item" data-category="brand-guidelines">
+        <div class="portfolio-img-container">
+          <img src="Brand%20Guidelines/dream%20home.jpg" alt="Dream Home Visual Identity" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Brand Guidelines</span>
+            <h3 class="portfolio-item-title">Dream Home Visual Identity</h3>
+            <button class="portfolio-view-btn" aria-label="View Dream Home Visual Identity project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="brand-guidelines">
+        <div class="portfolio-img-container">
+          <img src="Brand%20Guidelines/Delicious%20Bytes01.jpg" alt="Delicious Bytes Branding" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Brand Guidelines</span>
+            <h3 class="portfolio-item-title">Delicious Bytes Branding</h3>
+            <button class="portfolio-view-btn" aria-label="View Delicious Bytes Branding project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="brand-guidelines">
+        <div class="portfolio-img-container">
+          <img src="Brand%20Guidelines/01.jpg" alt="Corporate Identity Standards" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Brand Guidelines</span>
+            <h3 class="portfolio-item-title">Corporate Identity Standards</h3>
+            <button class="portfolio-view-btn" aria-label="View Corporate Identity Standards project">View Project</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. Brochure Design -->
+      <article class="portfolio-item" data-category="brochure-design">
+        <div class="portfolio-img-container">
+          <img src="Brochure%20Design/Haval%20catalogue_mockup.jpg" alt="Haval Catalogue Mockup" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Brochure Design</span>
+            <h3 class="portfolio-item-title">Haval Catalogue Mockup</h3>
+            <button class="portfolio-view-btn" aria-label="View Haval Catalogue Mockup project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="brochure-design">
+        <div class="portfolio-img-container">
+          <img src="Brochure%20Design/Haval_brochure.jpg" alt="Haval SUV Brochure" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Brochure Design</span>
+            <h3 class="portfolio-item-title">Haval SUV Brochure</h3>
+            <button class="portfolio-view-btn" aria-label="View Haval SUV Brochure project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="brochure-design">
+        <div class="portfolio-img-container">
+          <img src="Brochure%20Design/01.jpg" alt="Corporate Brochure Layout" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Brochure Design</span>
+            <h3 class="portfolio-item-title">Corporate Brochure Layout</h3>
+            <button class="portfolio-view-btn" aria-label="View Corporate Brochure Layout project">View Project</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. Graphic Design -->
+      <article class="portfolio-item" data-category="graphic-design">
+        <div class="portfolio-img-container">
+          <img src="Graphic%20Design/How%20to%20Dress%20for%20Your%20Dubai%20Desert%20Safari.jpg" alt="Dubai Safari Campaign" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Graphic Design</span>
+            <h3 class="portfolio-item-title">Dubai Safari Campaign</h3>
+            <button class="portfolio-view-btn" aria-label="View Dubai Safari Campaign project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="graphic-design">
+        <div class="portfolio-img-container">
+          <img src="Graphic%20Design/Transfers.jpg" alt="Tourism Transfer Banner" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Graphic Design</span>
+            <h3 class="portfolio-item-title">Tourism Transfer Banner</h3>
+            <button class="portfolio-view-btn" aria-label="View Tourism Transfer Banner project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="graphic-design">
+        <div class="portfolio-img-container">
+          <img src="Graphic%20Design/smart%20bull%20tourism-01.jpg" alt="Smart Bull Creative" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Graphic Design</span>
+            <h3 class="portfolio-item-title">Smart Bull Creative</h3>
+            <button class="portfolio-view-btn" aria-label="View Smart Bull Creative project">View Project</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. Photography -->
+      <article class="portfolio-item" data-category="photography">
+        <div class="portfolio-img-container">
+          <img src="Photography/DSC00469.jpg" alt="Desert Safari Shoot" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Photography</span>
+            <h3 class="portfolio-item-title">Desert Safari Shoot</h3>
+            <button class="portfolio-view-btn" aria-label="View Desert Safari Shoot project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="photography">
+        <div class="portfolio-img-container">
+          <img src="Photography/DSC00521_A.jpg" alt="Outdoor Product Shoot" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Photography</span>
+            <h3 class="portfolio-item-title">Outdoor Product Shoot</h3>
+            <button class="portfolio-view-btn" aria-label="View Outdoor Product Shoot project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="photography">
+        <div class="portfolio-img-container">
+          <img src="Photography/DSC00559.jpg" alt="Premium Portrait Stills" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Photography</span>
+            <h3 class="portfolio-item-title">Premium Portrait Stills</h3>
+            <button class="portfolio-view-btn" aria-label="View Premium Portrait Stills project">View Project</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. Poster Design -->
+      <article class="portfolio-item" data-category="poster-design">
+        <div class="portfolio-img-container">
+          <img src="Poster%20Design/Master%20Tile%20KV2%20Final.jpg" alt="Master Tile KV Poster" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Poster Design</span>
+            <h3 class="portfolio-item-title">Master Tile KV Poster</h3>
+            <button class="portfolio-view-btn" aria-label="View Master Tile KV Poster project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="poster-design">
+        <div class="portfolio-img-container">
+          <img src="Poster%20Design/Standee_32x72.jpg" alt="Sazgar Standee Design" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Poster Design</span>
+            <h3 class="portfolio-item-title">Sazgar Standee Design</h3>
+            <button class="portfolio-view-btn" aria-label="View Sazgar Standee Design project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="poster-design">
+        <div class="portfolio-img-container">
+          <img src="Poster%20Design/terrifier.jpg" alt="Terrifier Movie Poster" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Poster Design</span>
+            <h3 class="portfolio-item-title">Terrifier Movie Poster</h3>
+            <button class="portfolio-view-btn" aria-label="View Terrifier Movie Poster project">View Project</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. Print Media -->
+      <article class="portfolio-item" data-category="print-media">
+        <div class="portfolio-img-container">
+          <img src="Print%20Media/Haval%20Billboard%2060x30.jpg" alt="Haval Billboard 60x30" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Print Media</span>
+            <h3 class="portfolio-item-title">Haval Billboard 60x30</h3>
+            <button class="portfolio-view-btn" aria-label="View Haval Billboard 60x30 project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="print-media">
+        <div class="portfolio-img-container">
+          <img src="Print%20Media/BAIC_W_15_x_H_9.2.jpg" alt="BAIC W15 Print Ad" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Print Media</span>
+            <h3 class="portfolio-item-title">BAIC W15 Print Ad</h3>
+            <button class="portfolio-view-btn" aria-label="View BAIC W15 Print Ad project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="print-media">
+        <div class="portfolio-img-container">
+          <img src="Print%20Media/Map_Design_W_29.5_X_23.5-01.jpg" alt="Sazgar Showroom Map Design" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Print Media</span>
+            <h3 class="portfolio-item-title">Sazgar Showroom Map Design</h3>
+            <button class="portfolio-view-btn" aria-label="View Sazgar Showroom Map Design project">View Project</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. Social Media -->
+      <article class="portfolio-item" data-category="social-media">
+        <div class="portfolio-img-container">
+          <img src="Social%20Media/Haval_Social_media_01.jpg" alt="Haval Social Campaign" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Social Media</span>
+            <h3 class="portfolio-item-title">Haval Social Campaign</h3>
+            <button class="portfolio-view-btn" aria-label="View Haval Social Campaign project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="social-media">
+        <div class="portfolio-img-container">
+          <img src="Social%20Media/Master_tiles_Social_media_01.jpg" alt="Master Tiles Social Poster" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Social Media</span>
+            <h3 class="portfolio-item-title">Master Tiles Social Poster</h3>
+            <button class="portfolio-view-btn" aria-label="View Master Tiles Social Poster project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="social-media">
+        <div class="portfolio-img-container">
+          <img src="Social%20Media/New_YEAR_2024_01.jpg" alt="New Year 2024 Design" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Social Media</span>
+            <h3 class="portfolio-item-title">New Year 2024 Design</h3>
+            <button class="portfolio-view-btn" aria-label="View New Year 2024 Design project">View Project</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. UI/UX -->
+      <article class="portfolio-item" data-category="ui-ux">
+        <div class="portfolio-img-container">
+          <img src="UIUX/Taste%20share.png" alt="Taste Share App Interface" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">UI/UX</span>
+            <h3 class="portfolio-item-title">Taste Share App Interface</h3>
+            <button class="portfolio-view-btn" aria-label="View Taste Share App Interface project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="ui-ux">
+        <div class="portfolio-img-container">
+          <img src="UIUX/c-travel01.png" alt="C-Travel App Design" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">UI/UX</span>
+            <h3 class="portfolio-item-title">C-Travel App Design</h3>
+            <button class="portfolio-view-btn" aria-label="View C-Travel App Design project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="ui-ux">
+        <div class="portfolio-img-container">
+          <img src="UIUX/RR%20Furniture_01.jpg" alt="RR Furniture E-Comm Store" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">UI/UX</span>
+            <h3 class="portfolio-item-title">RR Furniture E-Comm Store</h3>
+            <button class="portfolio-view-btn" aria-label="View RR Furniture E-Comm Store project">View Project</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10. Video Editing -->
+      <article class="portfolio-item" data-category="video-editing">
+        <div class="portfolio-img-container">
+          <img src="Print%20Media/BAIC_W_15_x_H_9.2.jpg" alt="BAIC BJ40 Teaser Video" loading="lazy">
+          <div class="portfolio-item-video-icon"><i class="fas fa-play"></i></div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Video Editing</span>
+            <h3 class="portfolio-item-title">BAIC BJ40 Teaser Video</h3>
+            <button class="portfolio-view-btn" data-video="Video%20Editing/Biac%20BJ%2040%20Teaser.mp4" aria-label="Watch BAIC BJ40 Teaser Video">Watch Video</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="video-editing">
+        <div class="portfolio-img-container">
+          <img src="Print%20Media/jolion_02.jpg" alt="Haval Jolion EV Teaser" loading="lazy">
+          <div class="portfolio-item-video-icon"><i class="fas fa-play"></i></div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Video Editing</span>
+            <h3 class="portfolio-item-title">Haval Jolion EV Teaser</h3>
+            <button class="portfolio-view-btn" data-video="Video%20Editing/Jolion%20EV%20Teaser.mp4" aria-label="Watch Haval Jolion EV Teaser">Watch Video</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="video-editing">
+        <div class="portfolio-img-container">
+          <img src="Print%20Media/H6_01_45x35.jpg" alt="Haval H6 Hybrid Teaser" loading="lazy">
+          <div class="portfolio-item-video-icon"><i class="fas fa-play"></i></div>
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Video Editing</span>
+            <h3 class="portfolio-item-title">Haval H6 Hybrid Teaser</h3>
+            <button class="portfolio-view-btn" data-video="Video%20Editing/Teaser%20H6%20Hybrid%20option%201.mp4" aria-label="Watch Haval H6 Hybrid Teaser">Watch Video</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 11. Website Design -->
+      <article class="portfolio-item" data-category="website-design">
+        <div class="portfolio-img-container">
+          <img src="Website%20Design/sazgar.jpg" alt="Sazgar Corporate Website" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Website Design</span>
+            <h3 class="portfolio-item-title">Sazgar Corporate Website</h3>
+            <button class="portfolio-view-btn" aria-label="View Sazgar Corporate Website project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="website-design">
+        <div class="portfolio-img-container">
+          <img src="Website%20Design/web.jpg" alt="Creative Agency Web UI" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Website Design</span>
+            <h3 class="portfolio-item-title">Creative Agency Web UI</h3>
+            <button class="portfolio-view-btn" aria-label="View Creative Agency Web UI project">View Project</button>
+          </div>
+        </div>
+      </article>
+      <article class="portfolio-item" data-category="website-design">
+        <div class="portfolio-img-container">
+          <img src="Website%20Design/web01.jpg" alt="Multipurpose Portfolio Theme" loading="lazy">
+          <div class="portfolio-overlay">
+            <span class="portfolio-item-category">Website Design</span>
+            <h3 class="portfolio-item-title">Multipurpose Portfolio Theme</h3>
+            <button class="portfolio-view-btn" aria-label="View Multipurpose Portfolio Theme project">View Project</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="portfolio-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Project Preview">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Close preview"><i class="fas fa-times"></i></button>
+      <div class="lightbox-media-container">
+        <!-- Media content (img or video) will be dynamically loaded here -->
+      </div>
+      <div class="lightbox-caption"></div>
+      <div class="lightbox-category"></div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section class="section experience" id="experience">
+    <div class="section-head">
+      <div class="section-tag">Career Journey</div>
+      <h2 class="section-title">A decade of <em>experience</em></h2>
+      <p class="section-sub">From manufacturing CGI to luxury real estate marketing — each role added a new layer to the
+        craft.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-year tl-current">2025 — 2026</div>
+        <div class="tl-content">
+          <h3 class="tl-role">Digital Marketing Specialist <em style="font-style:italic;color:var(--gold)">&amp;</em>
+            Content Creator</h3>
+          <div class="tl-company">
+            <span class="tl-company-name">Senzan Real Estate Developer</span>
+            <span class="tl-meta">Dubai · Real Estate</span>
+            <span class="tl-meta" style="color:var(--gold);border-color:var(--gold)">Current Role</span>
+          </div>
+          <ul class="tl-list">
+            <li>Develop and execute <b>full-funnel digital marketing strategies</b> for luxury and off-plan real estate
+              projects across the UAE market.</li>
+            <li>Plan, launch and optimize <b>high-budget lead generation campaigns</b> on Meta and Google Ads to
+              maximize ROI and qualified inquiries.</li>
+            <li>Create compelling real estate content — property walkthroughs, cinematic reels, drone videos and branded
+              social campaigns.</li>
+            <li>Script, shoot and edit <b>high-converting video ads</b> tailored for buyers and investors.</li>
+            <li>Collaborate with sales teams to improve lead quality and conversion rates.</li>
+            <li>Conduct competitor research and implement retargeting strategies to strengthen market positioning.</li>
+          </ul>
+          <div class="tl-kpis">
+            <span class="kpi">CPL</span><span class="kpi">CTR</span><span class="kpi">CPC</span><span
+              class="kpi">ROAS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2024 — 2025</div>
+        <div class="tl-content">
+          <h3 class="tl-role">Digital Marketing Specialist</h3>
+          <div class="tl-company">
+            <span class="tl-company-name">Smart Bull Tourism</span>
+            <span class="tl-meta">Dubai · Tourism</span>
+          </div>
+          <ul class="tl-list">
+            <li><b>Social Media Strategy &amp; AI:</b> Developed and executed Meta Ads strategy, conducted competitive
+              research and created targeted messaging.</li>
+            <li><b>Content &amp; Campaigns:</b> Curated content and managed Google/Meta Ads, focusing on ad copy and
+              creative.</li>
+            <li><b>Advertising &amp; Paid Media:</b> Ran Meta Ads, Google Ads and other paid channels to maximize ROI.
+            </li>
+            <li><b>Multimedia Design:</b> Created innovative graphics and content for videos, web and social platforms.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2023 — 2024</div>
+        <div class="tl-content">
+          <h3 class="tl-role">Sr. Multimedia Designer <em style="font-style:italic;color:var(--gold)">/</em> Social
+            Media Specialist</h3>
+          <div class="tl-company">
+            <span class="tl-company-name">Saif Sultan Group</span>
+            <span class="tl-meta">Dubai · Part-time, Remote</span>
+          </div>
+          <ul class="tl-list">
+            <li><b>Social Media Strategy &amp; AI:</b> Developed and executed a Meta Ads strategy with competitive
+              research and targeted messaging.</li>
+            <li><b>Content &amp; Campaigns:</b> Curated content and managed Google/Meta Ads with focus on ad copy.</li>
+            <li><b>Optimization:</b> Optimized profiles and ad pages for branding and audience precision.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2022 — 2024</div>
+        <div class="tl-content">
+          <h3 class="tl-role">Sr. Multimedia Designer</h3>
+          <div class="tl-company">
+            <span class="tl-company-name">Sazgar Engineering Ltd.</span>
+            <span class="tl-meta">Automotive · Haval + BAIC</span>
+          </div>
+          <ul class="tl-list">
+            <li><b>Multimedia Design:</b> Created innovative graphics and content across video, web and social
+              platforms.</li>
+            <li><b>Camera Operation:</b> Planned shots, maintained equipment and managed shoots end-to-end.</li>
+            <li><b>Video Production &amp; Editing:</b> Led video creation — storyboarding, editing and motion graphics.
+            </li>
+            <li><b>Social Media Management:</b> Planned, scheduled and analyzed content; engaged community.</li>
+            <li>Boosted website traffic by <b>+30%</b> in six months through social media strategies.</li>
+            <li>Achieved <b>+45%</b> growth in engagement with compelling, visually appealing content.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2016 — 2022</div>
+        <div class="tl-content">
+          <h3 class="tl-role">Graphic Designer <em style="font-style:italic;color:var(--gold)">/</em> 3D CG Artist</h3>
+          <div class="tl-company">
+            <span class="tl-company-name">Master Tiles &amp; Ceramic Industries Ltd.</span>
+            <span class="tl-meta">Manufacturing</span>
+          </div>
+          <ul class="tl-list">
+            <li><b>Brand Development:</b> Collaborated with the marketing team to maintain brand consistency across all
+              design outputs.</li>
+            <li>Delivered a cohesive visual identity system across print, digital and 3D product visualizations for
+              Master Tiles.</li>
+            <li>Produced photorealistic 3D renders and CGI for product launches and catalog work.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section skills" id="skills">
+    <div class="section-head">
+      <div class="section-tag">Capabilities</div>
+      <h2 class="section-title">Skills &amp; <em>Toolkit</em></h2>
+      <p class="section-sub">Proficiency built across a decade of campaigns, shoots and design systems.</p>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-col">
+        <h3>Core <em>Proficiency</em></h3>
+
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Meta Ads</span><span class="skill-pct">95%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:95%"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Google Ads</span><span class="skill-pct">90%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:90%"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Video Editing &amp; Production</span><span
+              class="skill-pct">92%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:92%"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Graphic Design</span><span class="skill-pct">95%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:95%"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">Cinematic Shooting</span><span
+              class="skill-pct">88%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:88%"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">3D / CGI Animation</span><span
+              class="skill-pct">80%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:80%"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-row-top"><span class="skill-name">AI Creative Workflows</span><span
+              class="skill-pct">90%</span></div>
+          <div class="skill-bar">
+            <div class="skill-fill" style="width:90%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-col">
+        <h3>Software &amp; <em>Tools</em></h3>
+        <div class="tool-grid">
+          <div class="tool-card tc-ps">
+            <div class="tool-card-icon">Ps</div>
+            <div class="tool-card-name">Photoshop</div>
+          </div>
+          <div class="tool-card tc-ai">
+            <div class="tool-card-icon">Ai</div>
+            <div class="tool-card-name">Illustrator</div>
+          </div>
+          <div class="tool-card tc-pr">
+            <div class="tool-card-icon">Pr</div>
+            <div class="tool-card-name">Premiere</div>
+          </div>
+          <div class="tool-card tc-ae">
+            <div class="tool-card-icon">Ae</div>
+            <div class="tool-card-name">After FX</div>
+          </div>
+          <div class="tool-card tc-fi">
+            <div class="tool-card-icon">Fi</div>
+            <div class="tool-card-name">Firefly</div>
+          </div>
+          <div class="tool-card tc-mj">
+            <div class="tool-card-icon">MJ</div>
+            <div class="tool-card-name">MidJourney</div>
+          </div>
+          <div class="tool-card tc-rw">
+            <div class="tool-card-icon">RW</div>
+            <div class="tool-card-name">Runway</div>
+          </div>
+          <div class="tool-card tc-veo">
+            <div class="tool-card-icon">VEO</div>
+            <div class="tool-card-name">VEO 3</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:48px">Education &amp; <em>Languages</em></h3>
+        <div style="background:var(--bg);border:1px solid var(--line);padding:24px;margin-bottom:14px">
+          <div
+            style="color:var(--gold);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;margin-bottom:6px">
+            2024 — Ongoing</div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:500">Master of Digital Marketing
+          </div>
+          <div style="font-size:13px;color:var(--text-2);font-style:italic">LinkedIn Learning</div>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--line);padding:24px;margin-bottom:14px">
+          <div
+            style="color:var(--gold);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;margin-bottom:6px">
+            2009 — 2013</div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:500">Bachelor of Design</div>
+          <div style="font-size:13px;color:var(--text-2);font-style:italic">Multimedia Arts · University of Gujrat</div>
+        </div>
+
+        <div style="display:flex;gap:14px;margin-top:18px">
+          <div style="flex:1;background:var(--bg);border:1px solid var(--line);padding:18px;text-align:center">
+            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500">English</div>
+            <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:4px">
+              Professional</div>
+          </div>
+          <div style="flex:1;background:var(--bg);border:1px solid var(--line);padding:18px;text-align:center">
+            <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500">Urdu</div>
+            <div style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:4px">
+              Native</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="contact-inner">
+      <div class="section-tag" style="justify-content:center;display:inline-flex">Let's Work Together</div>
+      <h2>Have a <em>project</em> in mind?<br>Let's make it <em>convert</em>.</h2>
+      <p class="contact-lead">
+        Open to full-time opportunities, contract work and creative collaborations across the UAE and remote. Reach out
+        — let's talk strategy, creative and results.
+      </p>
+
+      <div class="contact-grid">
+        <a href="mailto:saqibhusain229@gmail.com" class="contact-card">
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value">saqibhusain229@gmail.com</div>
+        </a>
+        <a href="tel:+971506209290" class="contact-card">
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-value">+971 50 620 9290</div>
+        </a>
+        <a href="#" class="contact-card">
+          <div class="contact-card-label">Location</div>
+          <div class="contact-card-value">Satwa, Dubai · UAE</div>
+        </a>
+      </div>
+
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/saqibhussain229" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+        </a>
+        <a href="https://www.sakibhussain.com" class="social-link" aria-label="Website">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+        </a>
+        <a href="mailto:saqibhusain229@gmail.com" class="social-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+        </a>
+        <a href="https://wa.me/971506209290" class="social-link" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="logo-sm">Saqib Hussain<span>.</span></div>
+    <div>© 2026 — All rights reserved.</div>
+    <div>Designed &amp; built in Dubai</div>
+  </footer>
+
+  <!-- jQuery (required by animated.headline clip effect) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script>
+  /* ============================================================
+     CodyHouse Animated Headlines — "clip" effect
+     Ported from: hcoder.smartinnovates.net/i/personala/js/animated.headline.js
+     ============================================================ */
+  jQuery(document).ready(function ($) {
+    var animationDelay   = 2500,
+        revealDuration   = 600,
+        revealAnimDelay  = 1500;
+
+    initHeadline();
+
+    function initHeadline() {
+      animateHeadline($('.cd-headline'));
+    }
+
+    function animateHeadline($headlines) {
+      $headlines.each(function () {
+        var headline   = $(this);
+        var spanWrapper = headline.find('.cd-words-wrapper');
+        var newWidth    = spanWrapper.width() + 10;
+        spanWrapper.css('width', newWidth);
+        setTimeout(function () {
+          hideWord(headline.find('.is-visible').eq(0));
+        }, animationDelay);
+      });
+    }
+
+    function hideWord($word) {
+      var nextWord = takeNext($word);
+      if ($word.parents('.cd-headline').hasClass('clip')) {
+        $word.parents('.cd-words-wrapper').animate({ width: '2px' }, revealDuration, function () {
+          switchWord($word, nextWord);
+          showWord(nextWord);
+        });
+      }
+    }
+
+    function showWord($word) {
+      if ($word.parents('.cd-headline').hasClass('clip')) {
+        $word.parents('.cd-words-wrapper').animate({ 'width': $word.width() + 10 }, revealDuration, function () {
+          setTimeout(function () { hideWord($word); }, revealAnimDelay);
+        });
+      }
+    }
+
+    function takeNext($word) {
+      return (!$word.is(':last-child')) ? $word.next() : $word.parent().children().eq(0);
+    }
+
+    function switchWord($oldWord, $newWord) {
+      $oldWord.removeClass('is-visible').addClass('is-hidden');
+      $newWord.removeClass('is-hidden').addClass('is-visible');
+    }
+  });
+
+  // Smooth scroll for the down arrow
+  document.querySelectorAll('[data-scroll-to]').forEach(function (el) {
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      var id = el.getAttribute('data-scroll-to');
+      var target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  /* ============================================================
+     Portfolio Filtering and Lightbox Functionality
+     ============================================================ */
+  document.addEventListener('DOMContentLoaded', function () {
+    const filterButtons = document.querySelectorAll('.portfolio-filters .filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    const lightbox = document.getElementById('portfolio-lightbox');
+    const lightboxMediaContainer = lightbox.querySelector('.lightbox-media-container');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const lightboxCategory = lightbox.querySelector('.lightbox-category');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    let lastActiveElement = null;
+
+    // --- TAB FILTERING LOGIC ---
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active tab state
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+          btn.setAttribute('tabindex', '-1');
+        });
+        button.classList.add('active');
+        button.setAttribute('aria-selected', 'true');
+        button.setAttribute('tabindex', '0');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        // Apply smooth scale/fade filter transition
+        portfolioItems.forEach(item => {
+          item.classList.add('portfolio-item-fade');
+        });
+
+        setTimeout(() => {
+          portfolioItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+            if (filterValue === 'all' || itemCategory === filterValue) {
+              item.classList.remove('portfolio-item-hidden');
+              // Trigger reflow to restart animation transition
+              void item.offsetWidth;
+              item.classList.remove('portfolio-item-fade');
+            } else {
+              item.classList.add('portfolio-item-hidden');
+            }
+          });
+        }, 300);
+      });
+
+      // Keyboard navigation for filter buttons
+      button.addEventListener('keydown', (e) => {
+        const buttonsArray = Array.from(filterButtons);
+        const index = buttonsArray.indexOf(button);
+
+        let nextButton = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          nextButton = buttonsArray[index + 1] || buttonsArray[0];
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          nextButton = buttonsArray[index - 1] || buttonsArray[buttonsArray.length - 1];
+        } else if (e.key === 'Home') {
+          nextButton = buttonsArray[0];
+        } else if (e.key === 'End') {
+          nextButton = buttonsArray[buttonsArray.length - 1];
+        }
+
+        if (nextButton) {
+          nextButton.focus();
+          e.preventDefault();
+        }
+      });
+    });
+
+    // --- LIGHTBOX LOGIC ---
+    const viewButtons = document.querySelectorAll('.portfolio-view-btn');
+
+    viewButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        lastActiveElement = document.activeElement;
+
+        const card = btn.closest('.portfolio-item');
+        const title = card.querySelector('.portfolio-item-title').textContent;
+        const category = card.querySelector('.portfolio-item-category').textContent;
+        const videoSrc = btn.getAttribute('data-video');
+
+        lightboxMediaContainer.innerHTML = '';
+
+        if (videoSrc) {
+          // Load Video
+          const videoElement = document.createElement('video');
+          videoElement.src = decodeURIComponent(videoSrc);
+          videoElement.className = 'lightbox-media';
+          videoElement.controls = true;
+          videoElement.autoplay = true;
+          videoElement.setAttribute('aria-label', title);
+          lightboxMediaContainer.appendChild(videoElement);
+        } else {
+          // Load Image
+          const imgElement = card.querySelector('img');
+          const lightboxImg = document.createElement('img');
+          lightboxImg.src = imgElement.src;
+          lightboxImg.className = 'lightbox-media';
+          lightboxImg.alt = imgElement.alt;
+          lightboxMediaContainer.appendChild(lightboxImg);
+        }
+
+        lightboxCaption.textContent = title;
+        lightboxCategory.textContent = category;
+
+        // Open Lightbox modal
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        lightboxClose.focus();
+        document.body.style.overflow = 'hidden'; // Disable page scrolling
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; // Enable page scrolling
+      
+      // Pause and clear media to stop any playing videos
+      const video = lightboxMediaContainer.querySelector('video');
+      if (video) {
+        video.pause();
+      }
+      lightboxMediaContainer.innerHTML = '';
+
+      if (lastActiveElement) {
+        lastActiveElement.focus();
+      }
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    // Close lightbox clicking background
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close on Escape key press
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  });
+  </script>
+</body>
+
+</html>
